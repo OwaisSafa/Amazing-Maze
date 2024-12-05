@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Amazing Maze</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <!-- Start Menu -->
+        <div id="start-menu">
+            <div class="menu-content">
+                <div class="title-container">
+                    <h1>Amazing<span class="highlight">Maze</span></h1>
+                    <div class="subtitle">Navigate the Neon Labyrinth</div>
+                </div>
+                <div class="controls">
+                    <div class="difficulty-controls">
+                        <button id="easyBtn" class="difficulty-btn active">Easy</button>
+                        <button id="hardBtn" class="difficulty-btn">Hard</button>
+                        <button id="extremeBtn" class="difficulty-btn">Extreme</button>
+                    </div>
+                    <div class="size-control">
+                        <label for="mazeSize">Maze Size: <span id="mazeSizeValue">15</span></label>
+                        <input type="range" id="mazeSize" min="11" max="31" step="2" value="15">
+                    </div>
+                    <div class="toggle-container">
+                        <button class="difficulty-btn" id="soundToggle">Sound: ON</button>
+                        <button class="difficulty-btn" id="glowToggle">Glow: ON</button>
+                    </div>
+                    <button id="startBtn">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div id="game-container">
+            <div id="mazeContainer">
+                <canvas id="mazeCanvas"></canvas>
+                <div id="player"></div>
+            </div>
+            <div class="game-controls">
+                <button id="guideBtn">Show Guide</button>
+                <button id="exitBtn">Exit</button>
+            </div>
+            <div id="touch-controls">
+                <div class="touch-row">
+                    <button id="upBtn" class="touch-btn">↑</button>
+                </div>
+                <div class="touch-row">
+                    <button id="leftBtn" class="touch-btn">←</button>
+                    <button id="stopBtn" class="touch-btn">⬤</button>
+                    <button id="rightBtn" class="touch-btn">→</button>
+                </div>
+                <div class="touch-row">
+                    <button id="downBtn" class="touch-btn">↓</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="victory-screen" style="display: none;">
+            <div class="victory-content">
+                <h2>Amazing Victory!</h2>
+                <button id="playAgainBtn" class="control-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/maze.js"></script>
+    <script src="js/sound.js"></script>
+</body>
+</html>
